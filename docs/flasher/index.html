@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M5 StickC Motion Face - Installer</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10.1.0/dist/web/install-button.js?module"></script>
+  <style>
+    :root { --bg: #0c0c18; --card: #161628; --ink: #f1f4ff; --soft: #8c98b8; --blue: #50c8ff; }
+    body { margin: 0; font-family: system-ui, 'Segoe UI', sans-serif; background: var(--bg); color: var(--ink); }
+    main { max-width: 720px; margin: auto; padding: 24px 16px 48px; }
+    h1 { color: var(--blue); margin: 8px 0 4px; font-size: 34px; }
+    .card { background: var(--card); border-radius: 20px; padding: 20px; margin: 16px 0; }
+    ol li { margin: 6px 0; }
+    .muted { color: var(--soft); font-size: 14px; }
+    a { color: var(--blue); }
+    esp-web-install-button button[slot="activate"] {
+      background: var(--blue); color: #08111c; border: 0; border-radius: 999px; padding: 14px 28px;
+      font-size: 18px; font-weight: 800; cursor: pointer;
+    }
+    img { max-width: 100%; border-radius: 16px; }
+  </style>
+</head>
+<body>
+<main>
+  <img src="../images/banner.svg" alt="M5 StickC Motion Face">
+  <h1>Install in your browser</h1>
+  <p>Flash <b>StickC Motion Face</b> onto an <b>M5StickC</b> straight from Chrome or Edge on a computer -
+     no tools to install.</p>
+  <div class="card">
+    <ol>
+      <li>Connect the StickC with a USB <b>data</b> cable.</li>
+      <li>Press <b>Install</b> and choose the serial port (USB Serial / FTDI).</li>
+      <li>Wait about 30 seconds. When it finishes, shake the device!</li>
+    </ol>
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate">Install Motion Face v1.0.0</button>
+      <span slot="unsupported">Your browser does not support Web Serial. Use Chrome or Edge on a desktop computer.</span>
+      <span slot="not-allowed">Web Serial needs HTTPS - open this page from GitHub Pages.</span>
+    </esp-web-install-button>
+    <p class="muted">Controls: button A = next character (hold = colour), button B = colour.</p>
+  </div>
+  <p class="muted">Other ways to install (esptool, PlatformIO, M5Burner): see the
+    <a href="https://github.com/ElectroIoT/M5-StickC-Motion-Face/blob/main/docs/FLASHING.md">flashing guide</a>.</p>
+</main>
+</body>
+</html>
